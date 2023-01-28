@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+/* NanumBarunGothic 기본 폰트 */
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+body {
+    font-family: 'NanumBarunGothic', sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+}
+img{display: block;}
+
+
+/* INNER */
+.inner{
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+/* BUTTON */
+.btn{
+    display: block;
+    width: 130px;
+    padding: 7px;
+    border: 2px solid #111;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    box-sizing: border-box;
+    color: #111;
+}
+.btn:hover{
+    background: #111;
+    color: #fff;
+    text-decoration: underline;
+}
+/* pink btn -> brown에서 pink로 변경*/
+.btn.btn--pink{
+    /* --pink -- 하이픈 두개는 상태를 나타낼 때 씀 */
+    color: #E95A87;
+    border-color: #E95A87;
+}
+.btn.btn--pink:hover{
+    background: rgba(255, 255, 255, 0.4 );
+    text-decoration: underline;
+}
+/* revers btn */
+.btn.btn--reverse{
+    background: #00704A;
+    color: #fff;
+    border: 2px solid #00704A;
+    width: 110px;
+}
+.btn.btn--reverse:hover{
+    text-decoration: underline;
+}
+.btn.btn--reverse-white{
+    color: #fff;
+    border: 2px solid #fff;
+    width: 110px;
+}
+.btn.btn--reverse-white:hover{
+    text-decoration: underline;
+    background: none;
+}
+/* season btn */
+.btn.btn--season{
+    border: 2px solid #453D3D;
+    color: #453D3D;
+}
+.btn.btn--season:hover{
+    color: #fff;
+    background: #453D3D;
+}
+/* gold btn */
+.btn.btn--gold{
+    border-color: #B9813E;
+    color: #B9813E;
+}
+.btn.btn--gold:hover{
+    color: #fff;
+    background: #B9813E;
+}
+/* white btn */
+.btn.btn--white{
+    border-color: #fff;
+    color: #fff;
+}
+.btn.btn--white:hover{
+    background: #fff;
+    color: #333;
+}
+
+/* ============= spay ============= */
+.back-to-position{
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-right{
+    /* to-right => 왼쪽에서 부터 등장하니까 (마이너스) -150px */
+    transform: translateX(-150px);
+    /* 좌우로만 움직이기 때문에 translateX로 설정 */
+}
+.back-to-position.to-left{
+    transform: translateX(150px);
+}
+.show .back-to-position{
+    opacity: 1;
+    transform: translate(0);
+}
+
+
+/* 시간차 등장 모션 제작 */
+.show .back-to-position.delay-0{transition-delay: 0s;}
+.show .back-to-position.delay-1{transition-delay: 0.3s;}
+.show .back-to-position.delay-2{transition-delay: 0.6s;}
+.show .back-to-position.delay-3{transition-delay: 0.9s;}
